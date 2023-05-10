@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body >
+<h1 class="bg-info">My site</h1>
+<div class="btn-group btn-group-justified" id="y" style="background:white">
+    <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'about' %}">about</a>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+    {% else %}
+    <a href="{% url 'signup1' %}" class="btn btn-primary">signUp</a>
+    <a href="{% url 'login1' %}" class="btn btn-primary">Login</a>
+ 
+    {% endif %}
+
+</div>
+{% block body_block %}
+
+{% endblock %}
+</body>
+</html>
