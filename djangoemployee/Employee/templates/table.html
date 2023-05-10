@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h1>table</h1>
+
+<table>
+    <tr>
+        <th>EMP ID</th>
+        <th>EMP NAME</th>
+        <th>EMP AGE</th>
+        <th>EMP SALARY</th>
+    </tr>
+    {% for i in x %}
+    <tr>
+      
+        <td>{{i.emp_id}}</td>
+        <td>{{i.employee_name}}</td>
+        <td>{{i.employee_age}}</td>
+        <td>{{i.employee_salary}}</td>
+
+       
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
